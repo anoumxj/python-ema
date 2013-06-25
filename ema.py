@@ -48,8 +48,9 @@ def ema(list, alpha=None):
         #print pre_exp_factor
 
         # calculate the ema at the next time periods
-        ema_data.append( alpha*sum(map(lambda a,b: a*b, pre_exp_factor, nterms[:-1])) + \
+        ema_data.append(alpha*sum(map(lambda a,b: a*b, pre_exp_factor, nterms[:-1])) + \
                          (alpha_bar**len(nterms))*nterms[-1])
+                         
     return sorted(ema_data)
 
 if __name__ == "__main__":
