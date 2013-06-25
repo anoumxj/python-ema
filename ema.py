@@ -44,7 +44,7 @@ def ema(list, alpha=None):
     #print num_terms_list
     for nterms in num_terms_list:
         # calculate 1st~(t-1)-th terms corresponding exponential factor
-        pre_exp_factor = [ alpha_bar**(i-1) for i in range(1,len(nterms))]
+        pre_exp_factor = [alpha_bar**(i-1) for i in range(1,len(nterms))]
         #print pre_exp_factor
 
         # calculate the ema at the next time periods
