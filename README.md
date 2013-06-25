@@ -24,7 +24,7 @@ for exponiential moving average calculation
                             t-th
                     + (1-alpha)^(t)*X(0)
 
-         where alpha: smoothing factor
+         where alpha: smoothing factor, alpha=1/len(list)
                X(t-1) is observation value at time (t-1) period
                EMA(t-1) is prediction value at time (t-1) periods
                EMA(t) is prediction value at time t periods
