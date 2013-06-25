@@ -2,7 +2,6 @@
 
 def ema(list, alpha=None):
     ema_data = []
-
     # reversed order for the whole list (big->small)
     rev_list = sorted(list,reverse=True)
 
