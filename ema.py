@@ -54,6 +54,7 @@ def ema(list, alpha=None):
     return sorted(ema_data)
 
 if __name__ == "__main__":
+     # this is your code
      print ema(range(1,5000))
      
      
