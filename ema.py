@@ -37,7 +37,6 @@ def ema(list, alpha=None):
        alpha = 1/len(rev_list) # defaults
     if (alpha<0) or (alpha>1):
        raise ValueError("0 < smoothing factor <= 1")
-
     alpha_bar = float(1-alpha)
 
     num_terms_list = [rev_list[:i] for i in range(1,len(rev_list)+1)]
