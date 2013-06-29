@@ -40,6 +40,8 @@ def ema(l, alpha=None):
     if not alpha:
        alpha = 1/(len(rev_list)+1.25) # defaults
     if (alpha<0) or (alpha>1):
+       raise ValueError("0 < smoothing factor <= 1")
+ 
     # alpha_bar = 1 - alpha
     alpha_bar = float(1-alpha)
 
