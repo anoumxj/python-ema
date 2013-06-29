@@ -22,7 +22,7 @@ for exponiential moving average calculation
                                     1st               2nd                     3rd                            (t-1)-th
                   = alpha*[ (1-alpha)^(0)*X(t-1) + (1-alpha)^(1)*X(t-2) + (1-alpha)^(2)*X(t-3) + ...+ (1-alpha)^(t-2)*X(t-(t-1)) ]
                             t-th
-                    + (1-alpha)^(t)*X(0)
+                    + (1-alpha)^(t-1)*X(0)
 
          where alpha: smoothing factor, alpha=1/len(list)
                X(t-1) is observation value at time (t-1) period
