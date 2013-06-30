@@ -6,12 +6,12 @@ for exponiential moving average calculation
   here we use 'exponential moving average' to predict the next time period data value
     # EMA Formula:
 
-         X(0),X(1),X(2),...,X(t-1) : data-sets total with "t" time-period-points
+      X(0),X(1),X(2),...,X(t-1) : data-sets total with "t" time-period-points
 
-         EMA(1) = X(0) // initial point            -> 1 terms
-         EMA(2) = EMA(1) + alpha*(X(1)-EMA(1))
+      EMA(1) = X(0) // initial point            -> 1 terms
+      EMA(2) = EMA(1) + alpha*(X(1)-EMA(1))
                 = alpha*[X(1)] + (1-alpha)*X(0)    -> 2 terms
-         EMA(3) = EMA(2) + alpha*[X(2)-EMA(2)]
+      EMA(3) = EMA(2) + alpha*[X(2)-EMA(2)]
                 = [alpha*X(1)+(1-alpha)*X(0)] + alpha*[X(2)-(alpha*X(1)+(1-alpha)*X(0))]
                 = alpha*[X(2)+(1-alpha)*X(1)] + (1-alpha-alpha-alpha^2)*X(0)
                 = alph*[X(2)+(1-alpha)*X(1)] + (1-alpha)^2*X(0)     -> 3 terms
