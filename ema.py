@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import random
 
 def ema(l, alpha=None):
     """
@@ -58,6 +58,7 @@ def ema(l, alpha=None):
 
 if __name__ == "__main__":
      # this is your code
-     ober = [97.6, 95.1, 90.3, 92,5, 89.8, 92.7, 94.4, 96.2]
-     print "random_num=%s" % ober
+     #ober = [97.6, 95.1, 90.3, 92,5, 89.8, 92.7, 94.4, 96.2]
+     ober = [random.uniform(1,50) for i in range(0,10)]
+     print "rand_num=%s" % ober
      print "ema=%s" % ema(ober)
