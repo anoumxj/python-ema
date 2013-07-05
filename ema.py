@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import random
 
-def ema(l, alpha=None):
+def ema(L, alpha=None):
     """
        here we use 'exponential moving average' to predict the next time period data value
     # EMA Formula:
@@ -31,22 +31,18 @@ def ema(l, alpha=None):
                EMA(t-1) is prediction value at time (t-1) periods
                EMA(t) is prediction value at time t periods
     """
-    
     ema_data = []
     
-    # reverse the whole list
-    rev_list = l[::-1]
-
     if not alpha:
-       alpha = 1/(len(rev_list)+1.25) # defaults
+       alpha = 1/(len(L)+1.25) # defaults
     if (alpha<0) or (alpha>1):
        raise ValueError("0 < smoothing factor <= 1")
- 
-    # alpha_bar = 1 - alpha
     alpha_bar = float(1-alpha)
 
-    num_terms_list = [rev_list[:i] for i in range(1,len(rev_list)+1)]
-    #print num_terms_list
+    rev_list = L[::-1]
+    print rev_list
+    num_terms_list = [ L[-i:] for i in range(1,len(rev_list))]
+    print num_terms_list
     for nterms in num_terms_list:
         # calculate 1st~(t-1)-th terms corresponding exponential factor
         pre_exp_factor = [float(alpha_bar**(i-1)) for i in range(1,len(nterms))]
@@ -58,7 +54,7 @@ def ema(l, alpha=None):
 
 if __name__ == "__main__":
      # this is your code
-     #ober = [97.6, 95.1, 90.3, 92,5, 89.8, 92.7, 94.4, 96.2]
-     ober = [random.uniform(1,50) for i in range(0,10)]
+     ober = [97.6, 95.1, 90.3, 92,5, 89.8, 92.7, 94.4, 96.2]
+     #ober = [random.uniform(1,50) for i in range(0,10)]
      print "rand_num=%s" % ober
      print "ema=%s" % ema(ober)
