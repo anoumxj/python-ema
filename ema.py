@@ -40,7 +40,7 @@ def ema(L, alpha=None):
     
     """ generate [x(0)], [x(1),x(0)], [x(2),x(1),x(0)],.... """
     num_terms_list = [sorted(L[:i],reverse=True) for i in range(1,len(L)+1)]
-    print num_terms_list
+    #print num_terms_list
     #return 
     for nterms in num_terms_list:
         # calculate 1st~(t-1)-th terms corresponding exponential factor
